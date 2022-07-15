@@ -168,8 +168,8 @@ class OpdsBooksModel(QAbstractTableModel):
             bookType = link.get('type', '')
             # Skip covers and thumbnails
             if not bookType.startswith('image/'):
-                if bookType == 'application/epub+zip':
-                    # EPUB books are preferred and always put at the head of the list if found
+                if bookType == 'application/x-mobipocket-ebook':
+                    # AZW3 books are preferred and always put at the head of the list if found
                     bookDownloadUrls.insert(0, url)
                 else:
                     # Formats other than EPUB (eg. AZW), are appended as they are found
